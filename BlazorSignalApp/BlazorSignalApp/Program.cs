@@ -19,6 +19,8 @@ builder.Services.AddResponseCompression(opts =>
         ["application/octet-stream"]);
 });
 
+builder.WebHost.UseUrls("http://0.0.0.0:8080");
+
 var app = builder.Build();
 app.UseResponseCompression();
 
@@ -37,7 +39,7 @@ else
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 
 app.UseAntiforgery();
