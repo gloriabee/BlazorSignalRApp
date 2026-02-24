@@ -11,6 +11,7 @@ WebAssembly clients and an ASP.NET Core backend.
 - WebSocket transport
 - Response compression enabled
 - Clean component-based architecture
+- Docker support for containerized deployment
 
 ## 🏗 Architecture
 Client: Blazor WebAssembly component  
@@ -23,10 +24,23 @@ Communication: SignalR (WebSockets preferred transport)
 - SignalR
 - WebSockets
 - Response Compression Middleware
+- Docker
 
-## ⚙️ How to Run
+## ⚙️ Run Without Docker 
 1. Clone the repository
-2. Open the solution in Visual Studio 2022+
-3. Ensure .NET 9 SDK is installed
-4. Run the server project
-5. Open multiple browser tabs to test real-time messaging
+2. Run the application
+3. Open multiple browsers tabs to test real-time messaging.
+
+## 🐳 Run With Docker
+1. Build Docker Image
+```
+docker build -t blazor-chat .
+```
+2. Run container
+```
+docker run --name blazor-chat-container -p 8080:8080 blazor-chat
+```
+3. open in browser
+
+
+
